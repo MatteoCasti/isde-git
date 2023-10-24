@@ -34,7 +34,7 @@ def split_data(x, y, tr_fraction=0.5):
 
     """
     pass
-def load_mnist_data(filename, n_samples=None):
+def load_data(filename, n_samples=None):
     """This function returns MNIST handwritten digits and labels as ndarrays."""
     data = pd.read_csv(filename)
     data = np.array(data)  # cast pandas dataframe to numpy array
@@ -45,21 +45,3 @@ def load_mnist_data(filename, n_samples=None):
     return x, y
 
 
-def predict_for_loops(xts, centroids):
-    n_samples = xts.shape[0]
-    n_classes = centroids.shape[0]
-    dist = np.zeros(shape=(n_samples, n_classes))
-    ypred = np.zeros(shape=(n_samples,), dtype='int')
-
-    for i in range(n_samples):
-        for k in range(n_classes):
-            dist[i, k] = np.linalg.norm(xts[i, :] - centroids[k, :], ord=2)
-        ypred[i] = np.argmin(dist[i, :])
-
-    return ypred
-
-
-def predict(xts, centroids):
-    dist = pairwise_distances(xts, centroids)  #  dist.shape = (400, 10)
-    ypred = np.argmin(dist, axis=1)
-    return ypred
