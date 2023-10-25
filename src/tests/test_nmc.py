@@ -2,7 +2,7 @@ import numpy as np
 from os import path
 import unittest
 
-from fun_utils import load_data, split_data
+from tests.fun_utils import load_data, split_data
 from classifiers import NMC
 
 
