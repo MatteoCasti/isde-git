@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Black">
-<<<<<<< HEAD
-    <option name="sdkName" value="Python 3.7 (isde-git)" />
-=======
     <option name="sdkName" value="Python 3.9 (isde-git)" />
->>>>>>> 6bdd109bd0e839eb162ff7fd1f83b6c39c5ea573
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.7 (isde-git)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9 (isde-git)" project-jdk-type="Python SDK" />
 </project>
