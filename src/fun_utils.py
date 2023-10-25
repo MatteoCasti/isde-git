@@ -25,6 +25,7 @@ def load_data(filename):
     X = z[:, 1:]
     return X, y
 
+#implementazione  split data
 
 def split_data(X, y, tr_fraction=0.5):
     """
