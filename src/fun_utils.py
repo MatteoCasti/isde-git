@@ -37,4 +37,4 @@ def split_data(X, y, tr_fraction=0.5):
 
     return Xtr, ytr, Xts, yts
 
-    pass
+    
