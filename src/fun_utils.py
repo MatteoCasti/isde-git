@@ -13,5 +13,6 @@ def load_data(filename, n_samples=None):
     x = data[:,1:] / 255.0
     return x, y
 
+#implementazione  split data
 
 
