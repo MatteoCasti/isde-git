@@ -1,25 +1,17 @@
+import pandas as pd
 from pandas import read_csv
 import numpy as np
-from sklearn.metrics import pairwise_distances
 
 
-def predict(self, xts):
-    """
-    Compute predictions on test data.
+def load_data(filename, n_samples=None):
+    """This function returns MNIST handwritten digits and labels as ndarrays."""
+    data = pd.read_csv(filename)
+    data = np.array(data)  # cast pandas dataframe to numpy array
+    if n_samples is not None:  # only returning the first n_samples
+        data = data[:n_samples, :]
+    y = data[:,0]
+    x = data[:,1:] / 255.0
+    return x, y
 
-    Parameters
-    ----------
-    xts
-        Test data
 
-    Returns
-    -------
-    Predicted labels for the test data.
 
-    """
-    if self._centroids is None:
-        raise ValueError("Centroids not set. Run fit(x,y) first!")
-
-    dist = pairwise_distances(xts, self._centroids)
-    ypred = np.argmin(dist, axis=1)
-    return ypred
