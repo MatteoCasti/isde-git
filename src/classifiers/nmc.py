@@ -42,8 +42,7 @@ class NMC(object):
             self._centroids[k, :] = np.mean(xtr[ytr == k, :], axis=0)
         return self
 
-    def predict(self, xts):
-        pass
+    
 
     def predict(self, xts):
         """
